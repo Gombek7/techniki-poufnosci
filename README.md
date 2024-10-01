@@ -1,2 +1,5 @@
-# techniki-poufnosci
-Techniki zapewniania poufności w Internecie
+# Techniki zapewniania poufności w Internecie
+
+Członkowie zespołu:
+- Jarosław Dakowicz
+- Piotr Kozioł
