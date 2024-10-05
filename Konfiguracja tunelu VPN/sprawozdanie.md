@@ -5,7 +5,7 @@ Członkowie zespołu:
 - Jarosław Dakowicz
 - Piotr Kozioł
 
-## Konfiguracja serwera
+## Generowanie certyfikatów
 
 Rolę serwera będzie pełnił laptop z systemem Windows. OpenVPN zostało zainstalowane za pomocą dostarczonego instalatora msi.
 
@@ -57,3 +57,41 @@ Proces generowania certyfikatów i kluczy dla klientów przebiegł podobnie jak 
 | ![dh-gen](img/dh-gen.png) | 
 |:--:| 
 | *Wygenerowanie parametrów DH* |
+
+### Podsumowanie wygenerowanych plików
+
+| Plik | Potrzebny przez | Przeznaczenie | Sekret |
+| -- | -- | -- | -- |
+| ca.crt | serwer + wszyscy klienci | Główny certyfikat CA | NIE |
+| ca.key | tylko maszyna podpisująca klucze | Główny klucz CA | TAK |
+| dh{n}.pem | tylko serwer | Parametry Diffie'go Hellman'a | NIE |
+| server.crt | tylko serwer | Certyfikat Serwera | NIE |
+| server.key | tylko serwer | Klucz Serwera | TAK |
+| client1.crt | tylko client1 | Certyfikat client1 | NIE |
+| client1.key | tylko client1 | Klucz Client1 | TAK |
+| client2.crt | tylko client2 | Certyfikat Client2 | NIE |
+| client2.key | tylko client2 | Klucz Client2 | TAK |
+| client3.crt | tylko client3 | Certyfikat Client3 | NIE |
+| client3.key | tylko client3 | Klucz Client3 | TAK |
+
+## Konfiguracja serwera
+
+
+```apacheconf
+port 1194
+proto udp
+dev tun
+ca ca.crt
+cert server.crt
+key server.key  # This file should be kept secret
+dh dh.pem
+topology subnet
+server 10.8.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+keepalive 10 120
+persist-key
+persist-tun
+status openvpn-status.log
+verb 3
+explicit-exit-notify 1
+```
