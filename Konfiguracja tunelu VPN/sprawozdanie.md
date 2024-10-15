@@ -146,4 +146,39 @@ if !matched!==1 (
 
 ## Konfiguracja klienta (komputer)
 
+OpenVPNConnect zostało zainstalowane za pomocą dostarczonego instalatora msi.
+
+
+Aby połączyćz serverem vpn była koniczna lekka edycja plików wcześniej wygenerowanych.
+
+client-example.ovpn
+```
+ca ca.crt
+cert client2.crt
+key client2.key
+.
+.
+.
+auth-user-pass
+```
+| ![dh-gen](img/Client2.png) | 
+|:--:| 
+| *Wygenerowanie parametrów DH* |
+
 ## Konfiguracja klienta (android)
+
+OpenVPNConnect zostało zainstalowane za pomocą Google Play.
+
+client-example.ovpn
+```
+ca ca.crt
+cert client3.crt
+key client3.key
+.
+.
+.
+auth-user-pass
+```
+| ![dh-gen](img/Client3.jpg) | 
+|:--:| 
+| *Wygenerowanie parametrów DH* |
