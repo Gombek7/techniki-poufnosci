@@ -3,3 +3,4 @@
 Członkowie zespołu:
 - Jarosław Dakowicz
 - Piotr Kozioł
+- Anton Maisiuk
