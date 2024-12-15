@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "idleberg.openvpn"
+        "idleberg.openvpn",
+        "denoland.vscode-deno"
     ]
 }
