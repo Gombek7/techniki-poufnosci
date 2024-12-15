@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "idleberg.openvpn",
-        "denoland.vscode-deno"
+        "redking00.vscode-nbts"
     ]
 }
