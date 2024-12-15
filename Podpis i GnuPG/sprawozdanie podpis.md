@@ -11,14 +11,14 @@ Członkowie zespołu:
 Za pomocą bibliotek `node-rsa` i `crc` został stworzyny system do podpisywania elektronicznego
 
 Najpierw system generuje parę kluczy o długości 512 bit
-```
+```js
 const key = new NodeRSA({ b: 512 });
 const privateKey = key.exportKey('private');
 const publicKey = key.exportKey('public');
 ```
 
 Dalej system wczytuje plik podpisuje go za pomocą klucza prywatnego.
-```
+```js
 // Dokument do podpisania
 const document = readFileSync('./dokument_1.txt', 'utf8');
 const hash = calculateCRC32(document);
@@ -29,14 +29,14 @@ const signature = privateKeyObj.encryptPrivate(hash, 'base64');
 ```
 
 Za hashowanie pliku odpowiada funkcja skrótu `CRC`:
-```
+```js
 function calculateCRC32(data) {
     return crc.crc32(data).toString(16);
 }
 ```
 
-Na koniec, przechodzi weryfikacja podpisu za pomocą klucza publicznego. Jeżeli hashy się zgadzają się, system wypisuje `true`, inczej - `false`
-```
+Na koniec, odbywa się weryfikacja podpisu za pomocą klucza publicznego. Jeżeli skróty są takie same, system wypisuje `true`, inczej - `false`
+```js
 const publicKeyObj = new NodeRSA(publicKey);
 const decryptedHash = publicKeyObj.decryptPublic(signature, 'utf8');
 
@@ -47,7 +47,7 @@ console.log("Podpis jest prawidłowy:", hash === decryptedHash);
 
 #### 1.2.1 Test kolizji
 Do badania na wystąpienia kolizji została użyta funkcja
-```
+```js
 function testCollisions() {
   const msg1 = "123";
   const msg2 = "321";
@@ -76,8 +76,8 @@ CRC1: [123, 321, 132, 312]: [ '96', '96', '96', '96' ]
 3. CRC nie powinno być stosowane w miejscach wymagających wysokiego poziomu bezpieczeństwa (np. w podpisach cyfrowych), ponieważ jego projekt nie zakłada odporności na ataki kryptograficzne.
 
 #### 1.2.2 Test wydajności
-Do badania na wystąpienia kolizji została użyta funkcja, która tworzy buffer o podanym rozmiarze i mierzy czas podpisywania.
-```
+Do badania wydajności została użyta funkcja która tworzy wypełniony bufor o podanym rozmiarze i mierzy czas podpisywania.
+```js
 function testPerfomance() {
   const key = new NodeRSA({ b: 512 });
   const privateKey = key.exportKey('private');
