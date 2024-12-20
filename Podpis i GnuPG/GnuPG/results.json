@@ -1,0 +1,32 @@
+[
+    {
+        "file_size_kb": 1,
+        "signing_time_ms": 68.98760795593262,
+        "encryption_time_ms": 172.79601097106934,
+        "decryption_time_ms": 67.61860847473145
+    },
+    {
+        "file_size_kb": 10,
+        "signing_time_ms": 76.27463340759277,
+        "encryption_time_ms": 863.2545471191406,
+        "decryption_time_ms": 112.53643035888672
+    },
+    {
+        "file_size_kb": 100,
+        "signing_time_ms": 101.53603553771973,
+        "encryption_time_ms": 171.0495948791504,
+        "decryption_time_ms": 70.4507827758789
+    },
+    {
+        "file_size_kb": 1000,
+        "signing_time_ms": 80.63197135925293,
+        "encryption_time_ms": 175.93097686767578,
+        "decryption_time_ms": 65.83380699157715
+    },
+    {
+        "file_size_kb": 10000,
+        "signing_time_ms": 131.16979598999023,
+        "encryption_time_ms": 517.829418182373,
+        "decryption_time_ms": 92.55599975585938
+    }
+]
