@@ -7,4 +7,5 @@
         "steganalizy",
         "zainicjalizować"
     ],
+    "markdown-pdf.headerTemplate": "<span class='title' style='display: none;'></span>"
 }
