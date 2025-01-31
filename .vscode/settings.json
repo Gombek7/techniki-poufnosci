@@ -1,4 +1,10 @@
 {
     "deno.enable": true,
-    "typescript.validate.enable": false
+    "typescript.validate.enable": false,
+    "cSpell.language": "pl, en",
+    "cSpell.words": [
+        "Inicjalizacja",
+        "steganalizy",
+        "zainicjalizować"
+    ],
 }

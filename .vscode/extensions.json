@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "idleberg.openvpn",
-        "redking00.vscode-nbts"
+        "redking00.vscode-nbts",
+        "streetsidesoftware.code-spell-checker-polish",
+        "streetsidesoftware.code-spell-checker"
     ]
 }

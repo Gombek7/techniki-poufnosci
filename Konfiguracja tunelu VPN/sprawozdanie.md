@@ -149,7 +149,7 @@ if !matched!==1 (
 OpenVPNConnect zostało zainstalowane za pomocą dostarczonego instalatora msi.
 
 
-Aby połączyćz serverem vpn była koniczna lekka edycja plików wcześniej wygenerowanych.
+Aby połączyć z serwerem vpn była koniczna lekka edycja plików wcześniej wygenerowanych.
 
 client-example.ovpn
 ```
