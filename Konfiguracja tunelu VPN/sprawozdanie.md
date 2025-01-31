@@ -4,6 +4,7 @@ Najnowsza wersja sprawozdania jest dostępna pod adresem: [https://github.com/Go
 Członkowie zespołu:
 - Jarosław Dakowicz
 - Piotr Kozioł
+- Anton Maisiuk
 
 ## Generowanie certyfikatów
 
